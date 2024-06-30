@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .slideshow-container {
+            padding-top: 30px;
+            max-width: 300px;
+            max-height: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        .slide-img {
+            width: 1000px;
+            height: 200px;
+            
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #333;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="mySlides">
+        <img class="slide-img" src="starboy.jpg" alt="Slide 1">
+    </div>
+
+    <div class="mySlides">
+        <img class="slide-img" src="the-weeknd.jpg" alt="Slide 2">
+    </div>
+
+    <div class="mySlides">
+        <img class="slide-img" src="pri.jpeg" alt="Slide 3">
+    </div>
+
+    <div class="mySlides">
+        <img class="slide-img" src="juice.jpg" alt="Slide 4">
+    </div>
+
+    <div class="mySlides">
+        <img class="slide-img" src="jb.jpeg" alt="Slide 5">
+    </div>
+
+    <button class="prev" onclick="plusSlides(-1)">❮</button>
+    <button class="next" onclick="plusSlides(1)">❯</button>
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        setInterval(function() {
+            plusSlides(1);
+          }, 3000); //
+    }
+</script>
+
+</body>
+</html>

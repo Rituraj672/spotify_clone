@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spotify - Your favourite music is here</title>
+        <style>
+            form {
+                width: 300px;
+                margin: 0 auto;
+              }
+              
+              label {
+                display: block;
+                margin-top: 20px;
+              }
+              
+              input[type="text"], input[type="password"], select {
+                width: 100%;
+                padding: 5px;
+                margin-top: 5px;
+              }
+              
+              input[type="submit"] {
+                display: block;
+                margin: 20px auto;
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+              }
+        </style>
+        </head>
+        <form action="/submit_login" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <label for="city">City of Employment:</label><br>
+            <input type="text" id="city" name="city"><br>
+            <label for="webserver">Web server:</label><br>
+            <input type="text" id="webserver" name="webserver"><br>
+            <label for="role">Please specify your role:</label><br>
+            <select id="role" name="role">
+              <option value="admin">Admin</option>
+              <option value="engineer">Engineer</option>
+              <option value="manager">Manager</option>
+              <option value="guest">Guest</option>
+              <option value="mail">Mail</option>
+              <option value="payroll">Payroll</option>
+              <option value="self-service">Self-service</option>
+            </select><br>
+            <input type="submit" value="Login Reset">
+          </form>
+</html>
